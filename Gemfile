@@ -60,3 +60,6 @@ group :test do
 end
 
 gem "vite_rails", "~> 3.0"
+
+gem "turbo-rails", "~> 2.0"
+gem "stimulus-rails", "~> 1.3"
