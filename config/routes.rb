@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  get "home/index"
+  resources :foos
+  resource :users
+
+  namespace :auth do
+    get "login" => "login#index", as: "login"
+    get "register" => "register#index", as: "register"
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

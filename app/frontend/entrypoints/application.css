@@ -2,3 +2,27 @@
 
 @source "../../assets/stylesheets/**/*.css";
 @source "../../views/**/*.html.erb";
+
+@theme {
+  --color-primary-soft: var(--color-slate-700);
+  --color-primary: var(--color-slate-800);
+  --color-primary-hard: var(--color-slate-900);
+  --color-fg-primary: white;
+
+  --radius: var(--radius-sm);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="search"] {
+  @apply w-full rounded-sm border border-gray-200 px-2 py-1;
+}
+
+.btn {
+  @apply rounded-sm px-2 py-1 rounded;
+}
+
+.btn-primary {
+  @apply bg-primary text-fg-primary;
+}
+
