@@ -1,0 +1,12 @@
+services:
+  dev:
+    build:
+      context: .
+    ports:
+      - 3000:3000
+      - 3036:3036
+    volumes:
+      - /rails/node_modules
+      - .:/rails
+    tty: true
+    stdin_open: true
