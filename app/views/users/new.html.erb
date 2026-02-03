@@ -1,0 +1,49 @@
+<div class="p-4">
+  <%= form_with model: @user, url: users_create_path, method: :post do |form| %>
+    <% if @user.errors.any? %>
+      <div class="bg-rose-50 text-red-700 border border-red-700 rounded-sm">
+        <div class="flex flex-col items-start justify-start gap-2 p-4">
+          <% @user.errors.full_messages.each do |message| %>
+            <span><%= message %></span>
+          <% end %>
+        </div>
+      </div>
+
+    <% end %>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><%= form.label :first_name %></td>
+          <td><%= form.text_field :first_name %></td>
+        </tr>
+
+        <tr>
+          <td><%= form.label :last_name %></td>
+          <td><%= form.text_field :last_name %></td>
+        </tr>
+
+        <tr>
+          <td><%= form.label :username %></td>
+          <td><%= form.text_field :username %></td>
+        </tr>
+
+        <tr>
+          <td><%= form.label :password %></td>
+          <td><%= form.password_field :password %></td>
+        </tr>
+
+        <tr>
+          <td><%= form.label :password_confirmation %></td>
+          <td><%= form.password_field :password_confirmation %></td>
+        </tr>
+
+        <tr>
+          <td><%= form.submit "Submit" %></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Already have an account? <%= link_to "Login", sessions_new_path %></p>
+  <% end %>
+</div>

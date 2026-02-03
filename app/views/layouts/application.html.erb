@@ -26,6 +26,13 @@
   </head>
 
   <body>
+    <div class="fixed top-0 right-0 flex flex-col items-end justify-start gap-2 p-4">
+      <% flash.each do |type, msg| %>
+        <div>
+          <%= msg %>
+        </div>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

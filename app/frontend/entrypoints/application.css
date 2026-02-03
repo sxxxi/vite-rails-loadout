@@ -2,3 +2,9 @@
 
 @source "../../assets/stylesheets/**/*.css";
 @source "../../views/**/*.html.erb";
+
+input[type="password"],
+input[type="text"],
+input[type="search"] {
+  @apply border border-neutral-600 rounded-sm p-1 w-full;
+}

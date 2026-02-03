@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-  get "home/index"
+  get "signup" => "users#new", as: :users_new
+  post "signup" => "users#create", as: :users_create
+  delete "unregister/:id" => "users#destroy", as: :users_destroy
+
+  get "login" => "sessions#new", as: :sessions_new
+  post "login" => "sessions#create", as: :sessions_create
+  delete "logout" => "sessions#destroy", as: :sessions_destroy
+
+  get "users" => "users#index", as: :users_index
+  get "users/:id" => "users#show", as: :users_show
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
